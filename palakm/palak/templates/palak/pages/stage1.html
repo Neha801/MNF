@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+<h1>BUDGET STAGE1</h1>
+<h2>{{project}}<h2>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+<style>
+table {
+  text-align:center;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.into{
+  position:absolute;
+  right:78%;
+  margin-left:auto;margin-right:auto;
+  text-align:left;
+  font-family: arial, sans-serif;
+  border: 1px solid ;
+  width: 150%;
+  }
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+input[type=text]{
+  border: none;
+  font-family: arial, sans-serif;
+  padding: 8px;
+  
+} 
+</style>
+<table class="into" style="width:20%">
+<tr>
+ <td>Duration</td>
+ <td>{{duration}} mins</td>
+<tr>
+ <td>Date</td>
+ <td>{{date}}</td>
+<tr>
+ <td>Language</td>
+ <td>{{language}}</td>
+<tr>
+ <td>Location</td>
+ <td>{{city}}</td>
+<tr>
+ <td>Currency</td>
+ <td>{{curr}}</td>
+<tr>
+ <td>Total Budget</td>
+ <td>{{tb}}</td>
+<form action="{% url 'update' %}">
+{% csrf_token %}
+
+<table style="width:30%">
+  <tr>
+    <th>Category</th>
+    <th>Costing</th> 
+  </tr>
+  <tr>
+    <td>Lead Cast</td>
+    <td contenteditable='true'>{{a}}</td>
+  </tr>
+  <tr>
+    <td>Other Actors</td>
+    <td contenteditable='true'>{{b}}</td>
+  </tr>
+  <tr>
+    <td>Writer</td>
+    <td contenteditable='true'>{{writer}}</td>
+  </tr>
+  <tr>
+    <td>Production</td>
+    <td contenteditable='true'>{{c}}</td>
+  </tr>
+  
+  <tr>
+    <td>Director</td>
+    <td contenteditable='true'>{{d}}</td>
+  </tr>
+  <tr>
+    <td>Producer</td>
+    <td contenteditable='true'>{{e}}</td>
+  </tr>
+  <tr>
+    <td>Post Production</td>
+    <td contenteditable='true'>{{f}}</td>
+  </tr>
+  <tr>
+    <td>Legal And Office Expenditure</td>
+    <td contenteditable='true'>{{g}}</td>
+  </tr>
+  <tr>
+    <td>Marketing</td>
+    <td contenteditable='true'>{{h}}</td>
+  </tr>
+  <tr>
+    <td>Miscellaneous</td>
+    <td contenteditable='true'>{{i}}</td>
+  </tr>
+  <tr>
+    <td>Total Budget</td>
+    <td contenteditable='true'>{{tb}}<td>
+  </tr>
+</table>
+<input type="hidden" name="text7" value={{a}}>
+<input type="hidden" name="text8" value={{b}}>
+<input type="hidden" name="text9" value={{c}}>
+<input type="hidden" name="text10" value={{d}}>
+<input type="hidden" name="text11" value={{e}}>
+<input type="hidden" name="text12" value={{f}}>
+<input type="hidden" name="text13" value={{g}}>
+<input type="hidden" name="text14" value={{h}}>
+<input type="hidden" name="text15" value={{i}}>
+<input type="hidden" name="text1" value={{tb}}>
+<input type="hidden" name="date" value={{date}}>
+<input type="hidden" name="time" value={{time}}>
+<input type="hidden" name="language" value={{language}}>
+<input type="hidden" name="currency" value={{curr}}>
+<input type="hidden" name="city" value={{city}}>
+<input type="hidden" name="writer" value={{writer}}>
+
+<input type="submit" value="Review"><br>
+</form>
+
+<form action="palak/stage1">
+<input type="submit" value="Back to Initial">
+<input type="hidden" name="text1" value={{tb}}>
+</form>
+
+
+
+<form action="" method="POST">
+{% csrf_token %}
+<input type="hidden" name="text7" value={{a}}>
+<input type="hidden" name="text8" value={{b}}>
+<input type="hidden" name="text9" value={{c}}>
+<input type="hidden" name="text10" value={{d}}>
+<input type="hidden" name="text11" value={{e}}>
+<input type="hidden" name="text12" value={{f}}>
+<input type="hidden" name="text13" value={{g}}>
+<input type="hidden" name="text14" value={{h}}>
+<input type="hidden" name="text15" value={{i}}>
+<input type="hidden" name="text1" value={{tb}}>
+
+<input type="hidden" name="project" value={{project}}>
+
+<input type="submit" value="Save"/>
+</form>
+
+
+
+<style>
+h1,h2{
+  text-align:center;
+  
+  }
+  
+table {
+  margin-left:auto;margin-right:auto;
+  text-align:center;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+input[type=text]{
+  border: none;
+  font-family: arial, sans-serif;
+  padding: 8px;
+  
+} 
+input[type=submit]{ 
+  margin-left:0%
+}
+</style>
+<!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

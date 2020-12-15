@@ -1,0 +1,106 @@
+ <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Rolling Stone Top 500 albums of all time</title>
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+      <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    </head>
+    
+    <body>
+	<form>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <table id="albums" class="table table-striped table-bordered" style="width:100%">
+              <thead>
+                <tr>
+				  <th></th>
+                  <th>Category</th>
+                  <th>Predicted</th>
+                  <th>Actual</th>
+                  <th>Paid</th>
+                  <th>Payable</th>
+                </tr>
+				
+				
+              </thead>
+			  <thead>
+                <tr>
+				  <th id="it">+</th>
+                  <th>Actors</th>
+                  <th>200</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+				
+				
+              </thead>
+			  <thead>
+                <tr id="td" style="display:none">
+				  <th></th>
+                  <td>Name:<input type="text" name="txt"></td>
+                  <td>Description:<input type="text" name="txt"></td>
+                  <td><input type="text" name="txt"></td>
+                  <th></th>
+                  <th></th>
+                </tr>
+				
+				
+              </thead>
+			  <thead>
+                <tr>
+				  <th id="it">+</th>
+                  <th>Other Actors</th>
+                  <th>50</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+				
+				
+              </thead>
+			  
+            </table>
+          </div>
+        </div>
+      </div>
+	  </form>
+				
+      <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+      <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+      <script>
+       var data = [
+       [
+        "Actors",
+        "200",
+        "",
+        "",
+        "",
+        
+       ],
+      [
+        "Other Cast",
+        "50",
+        "",
+        "",
+        "",
+       
+      ]
+]
+		  $(document).ready( function () {
+             $('#albums').DataTable()
+          } );
+	      $(document).ready(function(){
+		  
+             $("#it").click(function(){
+			 
+                $("#td").toggle("slow");
+				
+  });
+});
+      </script>
+    </body>
+    </html>

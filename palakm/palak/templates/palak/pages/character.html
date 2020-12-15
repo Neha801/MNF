@@ -1,0 +1,82 @@
+{% extends 'palak/pages/base.html' %}
+{% load static %}{% csrf_token %}
+{% block title%} ScreenPlay {% endblock %}
+{% block head %} {% endblock %}
+					{% block content %}
+								<div class="card card-custom">
+									<div class="card-header">
+										<div class="d-flex align-items-center flex-wrap mr-2">
+							<!--begin::Title-->
+							<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Characters</h5>
+							<!--end::Title-->
+							<!--begin::Separator-->
+							<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-5 bg-gray-200"></div>
+							<!--end::Separator-->
+							<!--begin::Search Form-->
+							<div class="d-flex align-items-center" id="kt_subheader_search">
+								
+								<form class="ml-5">
+									<div class="input-group input-group-sm input-group-solid" style="max-width: 175px">
+										<input type="text" class="form-control" id="kt_subheader_search_form" placeholder="Search...">
+										<div class="input-group-append">
+											<span class="input-group-text">
+												<span class="svg-icon">
+													<!--begin::Svg Icon | path:assets/media/svg/icons/General/Search.svg-->
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24"></rect>
+															<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+															<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+														</g>
+													</svg>
+													<!--end::Svg Icon-->
+												</span>
+												<!--<i class="flaticon2-search-1 icon-sm"></i>-->
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+							<!--end::Search Form-->
+							<!--begin::Group Actions-->
+					
+							<!--end::Group Actions-->
+						</div>
+									</div>
+									<!--begin::Form-->
+									<form>
+										<div class="card-body">
+											<div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded" id="kt_datatable">
+												<table class="databale-table" style="display: block;">
+													<thead class="datatable-head"><tr class="datatable-row" style="left: 0px;">
+														<th class="datatable-cell datatable-toggle-detail"><span></span></th>
+														<th data-field="RecordID" class="datatable-cell-left datatable-cell datatable-cell-sort"><span style="width: 50px;">#</span></th>
+														<th data-field="OrderID" class="datatable-cell datatable-cell-sort datatable-cell-sorted" data-sort="asc"><span style="width: 300px;">Character<i class="flaticon2-arrow-up"></i></span></th>
+														<th data-field="gender" class="datatable-cell datatable-cell-sort"><span style="width: 150px;">Gender</span></th>
+														<th data-field="voice" class="datatable-cell datatable-cell-sort"><span style="width: 150px;">Voice</span></th>
+														<th data-field="edit" data-autohide-disabled="false" class="datatable-cell datatable-cell-sort"><span style="width: 160px;">Edit</span></th></tr></thead>
+
+													<tbody class="datatable-body"><tr data-row="0" class="datatable-row" style="left: 0px;">
+														<td class="datatable-cell datatable-toggle-detail"><a class="datatable-toggle-detail" href=""><i class="fa fa-caret-right"></i></a></td>
+														<td class="datatable-cell-left datatable-cell" data-field="RecordID" aria-label="1"><span style="width: 40px;"><span class="font-weight-bolder">1</span></span></td>
+														<td class="datatable-cell-sorted datatable-cell" data-field="OrderID" aria-label="0004-0800"><span style="width: 250px;"><div class="d-flex align-items-center">								<div class="symbol symbol-70 symbol-sm flex-shrink-0">									<img class="" src="{% static 'palak/assets/media/users/100_11.jpg' %}" alt="photo">								</div>								<div class="ml-5">									<div class="text-dark-75 font-weight-bolder font-size-lg mb-0">Eduard Stoeck</div>																</div>							</div></span></td>
+														<td data-field="Gender" aria-label="Male" class="datatable-cell"><span style="width: 150px;"><div class="font-weight-bolder font-size-lg mb-0">Male</div>
+															<div class="font-weight-bold text-muted">Adult</div></span></td>
+														<td data-field="Voice" class="datatable-cell"><span style="width: 150px;">
+															<div class="font-weight-bolder text-primary mb-0"></div><div class="text-muted"></div><i class="fas fa-play"></i></span></td>
+														<td data-field="Edit" data-autohide-disabled="false" aria-label="null" class="datatable-cell">
+														   
+														<span style="overflow: visible; position: relative; width: 130px;">	<a href="/palak/character_edit">      <i class="fa fa-edit" style="font-size:25px"></i>  </a>        	                                                	                    </span></td></tr></tbody>
+													
+												</table>
+												
+											</div>
+											
+										</div>
+										
+											
+									</form>
+									<!--end::Form-->
+								</div>	
+								{% block js %}  {% endblock %}
+								{% endblock %}

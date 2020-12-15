@@ -1,0 +1,113 @@
+{% extends 'palak/pages/base.html' %}
+{% load static %}{% csrf_token %}
+{% block title%} ScreenPlay {% endblock %}
+{% block head %} {% endblock %}
+					{% block content %}
+					<form action="/palak/character_edit/" method="post" enctype="multipart/form-data">{% csrf_token %}
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<!--begin::Subheader-->
+						
+						<!--end::Subheader-->
+						<!--begin::Entry-->
+						
+
+                                                    <div class="row">
+														
+														<div class="col-xl-7 my-2">
+															<!--begin::Row-->
+															<div class="row">
+																<label class="col-3"></label>
+																<div class="col-9">
+																	<h6 class="text-dark font-weight-bold mb-10">Character Info.</h6>
+																</div>
+															</div>
+															<!--end::Row-->
+															<!--begin::Group-->
+															<div class="form-group row">
+
+																<label class="col-form-label col-3 text-lg-right text-left">Avatar</label>
+																<div class="col-9">
+																	<div class="image-input image-input-empty image-input-outline" id="kt_user_edit_avatar"> <img style="width: 90px;" src="{% static 'palak/assets/media/users/blank.png' %}">
+																		<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+																			<i class="fa fa-pen icon-sm text-muted"></i>
+																			<input type="file" name="character_image" accept="png/*,jpg/*,jpeg/*">
+																			
+																		</label>
+																		
+																	</div>
+																</div>
+															</div>
+															<!--end::Group-->
+															<!--begin::Group-->
+															<div class="form-group row">
+																<label class="col-form-label col-3 text-lg-right text-left">Character Name</label>
+																<div class="col-9">
+																	<input class="form-control form-control-lg form-control-solid" type="text" name="character_name">
+																</div>
+															</div>
+															<!--end::Group-->
+															<!--begin::Group-->
+															<div class="form-group row">
+																<label class="col-form-label col-3 text-lg-right text-left" name="gender">Gender</label>
+																<div class="col-9">
+																	<div class="checkbox-inline">
+																		<label class="checkbox checkbox-primary">
+																			<input type="checkbox" name="gender" value="Male" />
+																			<span></span>Male</label>
+																			<label class="checkbox checkbox-primary">
+																			<input type="checkbox" name="gender" value="Female" />
+																			<span></span>Female</label>
+																	</div>
+																</div>
+															</div>
+															<!--end::Group-->
+															<!--begin::Group-->
+															<div class="form-group row">
+																<label class="col-form-label col-3 text-lg-right text-left">Age Group</label>
+																<div class="col-9">
+																	<select name="age_group" class="form-control form-control-solid form-control-sm">
+																		<option value="">Select</option>
+																			<option value="Child" name ="age_group">Child</option>
+																			<option value="Infant"name ="age_group">Infant</option>
+																			<option value="Young"name ="age_group">Young</option>
+																			<option value="Adult"name ="age_group">Adult</option>
+																			<option value="Senior Age"name ="age_group">Senior Age</option>
+																		
+																	</select>
+																</div>
+															</div>
+															<!--end::Group-->
+															<!--begin::Group-->
+															<div class="form-group row">
+																<label for="music"class="col-form-label col-3 text-lg-right text-left">Select Voice</label>
+																<div class="col-9">
+																	<select id="music"name="music"class="form-control form-control-solid form-control-sm">
+  																		<option value="">- Select track -</option>
+																		<option value="MNF Men Voice 1"id="music"name="music">MNF Men Voice 1</option>
+																		<option value="MNF Women Voice 1"id="music"name="music">MNF Women Voice 1</option>
+																		<option value="MNF child Voice 1"id="music"name="music">MNF child Voice 1</option>
+																		<option value="MNF Adult Voice 1"id="music"name="music">MNF Adult Voice 1</option>
+																																				
+																	</select>
+																</div>
+																</div>
+																
+															</div>
+																	
+															<!--end::Group-->
+															<!--begin::Group-->
+															<div class="form-group row">
+																<div class="col-lg-3"></div>
+																<div class="col-lg-8">
+																	<button type="submit" class="btn btn-primary mr-2" style="margin-top: 550px; margin-right: 100px;">Submit</button>
+													
+																</div>
+															</div>
+															<!--end::Group-->
+															<!--begin::Group-->
+															
+															<!--end::Group-->
+														</div>
+					</form>								</div>
+					{% block js %}  {% endblock %}
+					{% endblock %}

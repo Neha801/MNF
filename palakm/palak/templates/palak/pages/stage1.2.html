@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+  <body>
+<h1>BUDGET</h1>
+
+<style>
+table {
+  text-align:center;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+input[type=text]{
+  border: none;
+  font-family: arial, sans-serif;
+  padding: 8px;
+  
+} 
+</style>
+<form action="{% url 'update2' %}">
+{% csrf_token %}
+
+<table style="width:30%">
+  <tr>
+    <th>Category</th>
+    <th>Costing</th> 
+  </tr>
+  <tr>
+    <td>Lead Cast</td>
+    <td contenteditable='true'>{{a}}</td>
+  </tr>
+  <tr>
+    <td>Other Actors</td>
+    <td contenteditable='true'>{{b}}</td>
+  </tr>
+  <tr>
+    <td>Production</td>
+    <td contenteditable='true'>{{c}}</td>
+  </tr>
+  <tr>
+    <td>Director</td>
+    <td contenteditable='true'>{{d}}</td>
+  </tr>
+  <tr>
+    <td>Production</td>
+    <td contenteditable='true'>{{e}}</td>
+  </tr>
+  <tr>
+    <td>Post Production</td>
+    <td contenteditable='true'>{{f}}</td>
+  </tr>
+  <tr>
+    <td>Legal And Office Expenditure</td>
+    <td contenteditable='true'>{{g}}</td>
+  </tr>
+  <tr>
+    <td>Marketing</td>
+    <td contenteditable='true'>{{h}}</td>
+  </tr>
+  <tr>
+    <td>Miscellaneous</td>
+    <td contenteditable='true'>{{i}}</td>
+  </tr>
+  <tr>
+    <td>Total Budget</td>
+    <td >{{tb}}<td>
+  </tr>
+</table>
+
+<input type="hidden" name="text16" value={{a}}>
+<input type="hidden" name="text17" value={{b}}>
+<input type="hidden" name="text18" value={{c}}>
+<input type="hidden" name="text19" value={{d}}>
+<input type="hidden" name="text20" value={{e}}>
+<input type="hidden" name="text21" value={{f}}>
+<input type="hidden" name="text22" value={{g}}>
+<input type="hidden" name="text23" value={{h}}>
+<input type="hidden" name="text24" value={{i}}>
+<input type="hidden" name="text1" value={{tb}}>
+
+
+
+<input type="submit" value="Update">
+</form>
+<form action="palak/stage1/">
+<input type="hidden" name="text1" value={{tb}}>
+<input type="submit" value="Back to Intial">
+
+</form>
+<!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
